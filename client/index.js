@@ -5,6 +5,7 @@ import { ApolloProvider } from 'react-apollo';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './components/App';
 import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 
 const client = new ApolloClient({
   uri:'http://localhost:4000/graphql',
@@ -16,7 +17,8 @@ const Root = () => {
     <ApolloProvider client={client}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <Router path="login" component={LoginForm}/>
+          <Route path="login" component={LoginForm} />
+          <Route path="signup" component={SignupForm}/>
         </Route>
       </Router>
     </ApolloProvider>

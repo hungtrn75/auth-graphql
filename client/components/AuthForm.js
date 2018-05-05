@@ -22,7 +22,10 @@ class AuthForm extends Component {
                         <input type="text" placeholder="Email" onChange={e => this.setState({ email: e.target.value })} value={this.state.email} required/>
                     </div>
                     <div className="input-field">
-                        <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} value={this.state.password}/>
+                        <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} value={this.state.password} required/>
+                    </div>
+                    <div className="errors">
+                        {this.props.errors.map(e => <div key={e}>{e}</div>)}
                     </div>
                     <button className="btn">Submit</button>
                 </form>
